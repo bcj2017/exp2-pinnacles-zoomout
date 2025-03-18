@@ -45,9 +45,10 @@ ts_arr = zeros(size(fileNames));
 for j = 1:length(fileNames)
     ts_arr(j) = str2double(fileNames{j}(1:end-4));
 end
+ts_arr = sort(ts_arr);
 clear files; clear fileNames;
 
-spacing = 6;
+spacing = 1;
 for j = 1:spacing:length(ts_arr) % iterate over frames
     ts = ts_arr(j);
     % Load data:
